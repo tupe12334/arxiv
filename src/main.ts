@@ -8,14 +8,10 @@
 import axios from "axios";
 import { ArxivQuery } from "./Query";
 
-class ArxivClient {
-  private baseUrl = "http://export.arxiv.org/api/query";
-  constructor() {}
-  async get(query: ArxivQuery) {
-    const response = await axios.post(this.baseUrl, query);
-    const { data } = response;
-    return data;
-  }
-}
+export const ArxivApiBaseUrl = "http://export.arxiv.org/api/query";
 
-export const arxiv = new ArxivClient();
+export async function ArxivClientGet(query: ArxivQuery) {
+  const response = await axios.post(ArxivApiBaseUrl, query);
+  const { data } = response;
+  return data;
+}
