@@ -7,4 +7,10 @@ describe("parseSearchQueryObject", () => {
     });
     expect(stringQuery).toBe("au:del_maestro");
   });
+  it("return the all parameter in the correct format", () => {
+    const stringQuery = parseSearchQueryObject({
+      All: "electron",
+    });
+    expect(stringQuery).toBe("all:electron");
+  });
 });
