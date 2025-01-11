@@ -15,5 +15,5 @@ export const search_query_prefixs = {
  * @param query
  */
 export function parseSearchQueryObject(
-  query: Record<keyof typeof search_query_prefixs, string>
+  query: Partial<Record<keyof typeof search_query_prefixs, string>>
 ) {}
